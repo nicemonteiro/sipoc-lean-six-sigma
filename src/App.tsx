@@ -12,7 +12,7 @@ export default function App() {
   const [geminiActive, setGeminiActive] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch("/api/health")
+    fetch("https://sipoc-lean-six-sigma.onrender.com/api/health")
       .then((res) => res.json())
       .then((data) => {
         if (typeof data.geminiConfigured === "boolean") {

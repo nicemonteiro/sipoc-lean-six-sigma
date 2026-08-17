@@ -71,7 +71,7 @@ export const SipocBuilder: React.FC = () => {
     if (!processName.trim()) return;
     setValidatingName(true);
     try {
-      const res = await fetch("/api/gemini/validate-name", {
+      const res = await fetch("https://sipoc-lean-six-sigma.onrender.com/api/validate-name", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rawName: processName }),
@@ -94,7 +94,7 @@ export const SipocBuilder: React.FC = () => {
   const handleSuggestTriggers = async () => {
     setLoadingTriggers(true);
     try {
-      const res = await fetch("/api/gemini/suggest-triggers", {
+      const res = await fetch("https://sipoc-lean-six-sigma.onrender.com/api/gemini/suggest-triggers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -131,7 +131,7 @@ export const SipocBuilder: React.FC = () => {
   const handleSuggestPoints = async () => {
     setLoadingPoints(true);
     try {
-      const res = await fetch("/api/gemini/suggest-points", {
+      const res = await fetch("https://sipoc-lean-six-sigma.onrender.com/api/gemini/suggest-points", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -175,7 +175,7 @@ export const SipocBuilder: React.FC = () => {
   const handleGenerateStepsWithAI = async () => {
     setGeneratingSteps(true);
     try {
-      const res = await fetch("/api/gemini/suggest-steps", {
+      const res = await fetch("https://sipoc-lean-six-sigma.onrender.com/api/gemini/suggest-steps", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -219,7 +219,7 @@ export const SipocBuilder: React.FC = () => {
         steps,
       };
 
-      const res = await fetch("/api/gemini/coach-feedback", {
+      const res = await fetch("https://sipoc-lean-six-sigma.onrender.com/api/gemini/coach-feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ currentSipoc: sipocPayload }),
@@ -1092,6 +1092,13 @@ export const SipocBuilder: React.FC = () => {
               <span>Voltar</span>
             </button>
 
+<button
+  onClick={addStep}
+  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold transition-colors"
+>
+  <Plus className="w-4 h-4" />
+  <span>Adicionar Etapa</span>
+</button>
             <button
               id="btn-next-step-5"
               onClick={() => {

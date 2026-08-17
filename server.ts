@@ -120,16 +120,20 @@ Responda em formato JSON com o seguinte schema:
 
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `Você é um instrutor especialista em Lean Six Sigma e mapeamento SIPOC.
-O usuário está definindo o GATILHO (Trigger) do processo: "${processName || "Processo Geral"}".
-Ideia inicial do usuário sobre o gatilho: "${userIdea || "Não especificado"}".
+        contents: contents: `Você é um especialista em Lean Six Sigma e mapeamento de processos (SIPOC).
+O usuário forneceu a seguinte ideia inicial para o GATILHO (Trigger/Primeiro Input) do processo: "${userIdea}".
+${processName ? `Nome do processo: "${processName}".` : ''}
 
-Conceito de Gatilho no SIPOC:
-- Pergunta-chave: "Antes de quê ninguém estava fazendo nada?"
-- O gatilho é o PRIMEIRO INPUT, NUNCA a primeira etapa/ação.
-- Exemplo do café: "O pedido do café" (não é "pegar a xícara" ou "ir até a cozinha", mas sim o evento externo que inicia a necessidade).
+Sua tarefa é gerar 3 opções de formulação do Gatilho:
+1. Uma versão direta e natural baseada na ideia do usuário.
+2. Uma versão formalizada de evento físico/sensorial ou sinalizador claro (ex: "Sinal do alarme do celular acionado", "Percepção de necessidade fisiológica").
+3. Uma versão focada no evento externo que inicia a ação imediata.
 
-Gere exatamente 3 opções excelentes de frases para o Gatilho (Trigger), claras, sucintas e estritamente alinhadas ao conceito de SIPOC, com uma breve justificativa explicativa para cada uma.`,
+REGRAS RÍGIDAS:
+- Mantenha total coerência com o tema informado pelo usuário ("${userIdea}").
+- NÃO invente termos corporativos fora de contexto como "estoque mínimo", "cronograma" ou "suprimentos" a menos que o tema seja explicitamente sobre compras/suprimentos.
+
+Responda exclusivamente no formato JSON esperado.`,
         config: {
           responseMimeType: "application/json",
           responseSchema: {

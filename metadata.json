@@ -1,0 +1,6 @@
+{
+  "name": "SIPOC - Lean Six Sigma",
+  "description": "Guia interativo, estudo de caso visual e construtor de SIPOC assistido por IA para Lean Six Sigma.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

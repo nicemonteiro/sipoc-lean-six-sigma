@@ -67,7 +67,7 @@ async function startServer() {
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Analise o seguinte nome proposto para um processo em um SIPOC (Lean Six Sigma): "${rawName}".
 Regra fundamental de SIPOC: Deve ser formulado como AÇÃO com VERBO no infinitivo + OBJETO (ex: "Preparar e servir café durante reunião de estudos"). 
 ERRO COMUM: Nomear com nome de departamento ou área (ex: "Recrutamento", "Compras", "Café").
@@ -127,7 +127,7 @@ Responda em formato JSON com o seguinte schema:
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Você é um especialista em Lean Six Sigma e mapeamento de processos (SIPOC).
 O usuário forneceu a seguinte ideia inicial para o GATILHO (Trigger/Primeiro Input) do processo: "${userIdea}".
 ${processName ? `Nome do processo: "${processName}".` : ''}
@@ -212,7 +212,7 @@ Responda exclusivamente no formato JSON esperado.`,
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Você é um instrutor especialista em Lean Six Sigma e SIPOC.
 Processo: "${processName}"
 Gatilho (Trigger): "${trigger}"
@@ -320,7 +320,7 @@ Gere 3 opções de Start Point e 3 opções de End Point para este processo.`,
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Você é um Master Black Belt em Lean Six Sigma.
 Crie um mapeamento SIPOC completo, pedagógico e de alto rigor técnico para o processo:
 - Nome do Processo: "${processName}"
@@ -403,7 +403,7 @@ Gere o array estruturado de passos 'steps'.`,
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Você é um instrutor e auditor Lean Six Sigma especialista em SIPOC.
 Avalie o seguinte mapeamento SIPOC criado pelo aluno:
 ${JSON.stringify(currentSipoc, null, 2)}

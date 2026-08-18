@@ -1093,7 +1093,7 @@ export const SipocBuilder: React.FC = () => {
             </button>
 
 <button
-  onClick={addStep}
+  onClick={addBlankStep}
   className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold transition-colors"
 >
   <Plus className="w-4 h-4" />

@@ -120,7 +120,7 @@ Responda em formato JSON com o seguinte schema:
 
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: contents: `Você é um especialista em Lean Six Sigma e mapeamento de processos (SIPOC).
+        contents: `Você é um especialista em Lean Six Sigma e mapeamento de processos (SIPOC).
 O usuário forneceu a seguinte ideia inicial para o GATILHO (Trigger/Primeiro Input) do processo: "${userIdea}".
 ${processName ? `Nome do processo: "${processName}".` : ''}
 
